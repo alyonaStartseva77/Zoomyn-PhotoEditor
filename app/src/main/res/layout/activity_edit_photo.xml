@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".EditPhotoActivity"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    //imageToEdit
+    <ImageView
+        android:id="@+id/imageToEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_edit_image"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave"
+        app:layout_constraintVertical_bias="1.0" />
+
+    //buttonBack
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_left_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.013" />
+
+<!--    //buttonUndo-->
+<!--    <ImageButton-->
+<!--        android:id="@+id/buttonUndo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@null"-->
+<!--        android:src="@drawable/ic_undo"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.39"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.023" />-->
+
+<!--    //textCancel-->
+<!--    <Button-->
+<!--        android:id="@+id/textCancel"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:background="@null"-->
+<!--        android:gravity="left|center"-->
+<!--        android:stateListAnimator="@null"-->
+<!--        android:text="@string/undo"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/buttonSave"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/buttonUndo"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.013" />-->
+
+    //buttonSave
+    <ImageButton
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    //horizontalScrollView
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNormalFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfNormalFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfNormalFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonNormalFilter"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFirstFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfFirstFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfFirstFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterFirst"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSecondFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfSecondFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfSecondFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterSecond"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutThirdFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfThirdFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfThirdFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterThird"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFourthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfFourthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfFourthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterFourth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFifthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfFifthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfFifthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterFifth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSixthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfSixthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfSixthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterSixth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSeventhFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfSeventhFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfSeventhFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterSeventh"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutEighthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfEighthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfEighthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterEighth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNinthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfNinthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfNinthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterNinth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTenthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfTenthFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/nameOfTenthFilter"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
+
+                <ImageButton
+                    android:id="@+id/buttonFilterTenth"
+                    android:layout_width="79dp"
+                    android:layout_height="84dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edit_image" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    //buttonFilter
+    <Button
+        android:id="@+id/buttonFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:stateListAnimator="@null"
+        android:text="@string/filter"
+        android:textColor="@color/colorGray"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
+
+    //buttonEdit
+    <Button
+        android:id="@+id/buttonEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:stateListAnimator="@null"
+        android:text="@string/edit"
+        android:textColor="@color/colorLightGray"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
+
+    //progressBar
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
